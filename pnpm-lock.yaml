@@ -1,0 +1,25 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      ringi-gate:
+        specifier: file:vendor/ringi-gate-4a1d8d4.tgz
+        version: file:vendor/ringi-gate-4a1d8d4.tgz
+
+packages:
+
+  ringi-gate@file:vendor/ringi-gate-4a1d8d4.tgz:
+    resolution: {integrity: sha512-Cn1SMb6UrlD6DjVj2Eody2ZeMlVPqiN5myawMpl+Wc9Fbkvs6qg0GmTuhuv7SSL2b/P6F4YKCXnlbAWjfabvGw==, tarball: file:vendor/ringi-gate-4a1d8d4.tgz}
+    version: 1.0.0
+    engines: {node: '>=24'}
+    hasBin: true
+
+snapshots:
+
+  ringi-gate@file:vendor/ringi-gate-4a1d8d4.tgz: {}
