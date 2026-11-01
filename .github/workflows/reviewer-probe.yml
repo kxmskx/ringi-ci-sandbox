@@ -1,0 +1,22 @@
+name: reviewer-probe
+on: pull_request
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+      - name: Install like the example
+        run: |
+          npm --version
+          npm install --global @anthropic-ai/claude-code@2.1.311
+      - name: Does the CLI start?
+        run: |
+          set +e
+          command -v claude
+          claude --version; echo "version-exit=$?"
+          ANTHROPIC_API_KEY=placeholder-not-a-key-0000 timeout 60 claude -p "Say ok" --output-format json; echo "prompt-exit=$?"
